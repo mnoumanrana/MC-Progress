@@ -18,9 +18,8 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
-    NavigationView navigationView;
     DrawerLayout drawerLayout;
+    NavigationView navigationView;
     Toolbar toolbar;
     ActionBarDrawerToggle toggle;
 
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
             Toast.makeText(getApplicationContext(),"Start",Toast.LENGTH_LONG).show();
-
         }
         else
         {
@@ -53,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        navigationView=findViewById(R.id.nav_view);
-        drawerLayout=findViewById(R.id.drawer);
+        navigationView = findViewById(R.id.nav_view);
+        drawerLayout = findViewById(R.id.drawer);
 
-        toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -69,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.nav_book :
-                        Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Return is Clicked",Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(MainActivity.this, bookActivity.class);
                         startActivity(intent);
                         //drawerLayout.closeDrawer(GravityCompat.START);
